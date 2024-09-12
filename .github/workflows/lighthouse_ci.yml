@@ -44,4 +44,4 @@ jobs:
       uses: actions/upload-artifact@v2  # Upload the report as an artifact
       with:
         name: lighthouse-report
-        path: ./result/case.html
+        path: ./result/Case.html
