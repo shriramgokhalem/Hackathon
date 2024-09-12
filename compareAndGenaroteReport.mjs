@@ -119,7 +119,7 @@ for (let page in urls) {
     
     
     // Write the HTML content to a file
-    fs.writeFileSync(path.join(__dirname, `${page}`+`_Comparison.html`), template, 'utf8');
+    fs.writeFileSync(path.join(__dirname, `./result/`+`${runNumber}/`+`${page}`+`_Comparison.html`), template, 'utf8');
 }
 
 console.log('Comparison report generated as comparison_report.html');
