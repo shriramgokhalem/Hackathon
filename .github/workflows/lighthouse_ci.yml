@@ -70,13 +70,18 @@ jobs:
     #       message: 'Create new folder and add file'
     #       add: './result/${{ github.run_number }}/'
     
-    - name: Commit and push changes
-      uses: EndBug/add-and-commit@v9
-      with:
-          author_name: Shriram Gokhale
-          author_email: shriramgokhale.m@planview.com
-          message: 'Add generated file'
-          add: "./result/${{ github.run_number }}"
+    # - name: Commit and push changes
+    #   uses: EndBug/add-and-commit@v9
+    #   with:
+    #       author_name: Shriram Gokhale
+    #       author_email: shriramgokhale.m@planview.com
+    #       message: 'Add generated file'
+    #       add: "./result/${{ github.run_number }}"
+
+
+    
+    - name: Trigger the script
+      run: node compareAndGenaroteReport.mjs ${{ github.run_number }}
           
     # - name: Trigger comparison script
     #   run: node hack.mjs ${{ github.run_number }}
