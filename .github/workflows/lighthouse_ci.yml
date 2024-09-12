@@ -25,6 +25,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Install dependencies for Chrome
+      run: sudo apt-get install -y libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libgconf-2-4 libgbm-dev libasound2 libpangocairo-1.0-0 libgtk-3-0 libxrandr2
+    
     - name: Install lighthouse
       run: npm install -g lighthouse  # Install Lighthouse globally
 

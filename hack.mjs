@@ -18,7 +18,7 @@ const password = 'Password1!';
 
 // (async () => {
   // Launch Puppeteer
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   // Go to login page
@@ -56,6 +56,7 @@ const password = 'Password1!';
       port: (new URL(browserWSEndpoint)).port,  // Use Puppeteer's port for Lighthouse
       output: 'html',  // Output report in HTML format
       logLevel: 'info',
+      chromeFlags: ['--headless']
     });
 
     let reportHtml = runnerResult.report;
