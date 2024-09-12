@@ -52,26 +52,28 @@ jobs:
           git config user.email "shriramgokhale.m@planview.com"
           git remote set-url origin https://shriramgokhale.m:${{ secrets.PAT_TOKEN }}@github.com/shriramgokhalem/Hackathon.git
     
-    # - name: Create Folder with Run Number
-    #   run: |
-    #       folder_name="${{ github.run_number }}"
-    #       echo "Creating folder: $folder_name"
-    #       cd result
-    #       mkdir -p $folder_name
-    #       echo "Folder created: $folder_name"
+    - name: Create Folder with Run Number
+      run: |
+          folder_name="${{ github.run_number }}"
+          echo "Creating folder: $folder_name"
+          cd result
+          mkdir -p $folder_name
+          echo "Folder created: $folder_name"
 
-    # - name: Commit and push changes folder
-    #   uses: EndBug/add-and-commit@v9
-    #   with:
-    #       author_name: Shriram Gokhale
-    #       author_email: shriramgokhale.m@planview.com
-    #       message: 'Create new folder and add file'
-    #       add: './result/${{ github.run_number }}/'
-    
-    - name: Commit and push changes
+          echo "This is a file in the new folder" > $folder_name/Case.html
+
+    - name: Commit and push changes folder
       uses: EndBug/add-and-commit@v9
       with:
           author_name: Shriram Gokhale
           author_email: shriramgokhale.m@planview.com
-          message: 'Add generated file'
-          add: "./result/Case_${{ github.run_number }}.html"
+          message: 'Create new folder and add file'
+          add: './result/${{ github.run_number }}/'
+    
+    # - name: Commit and push changes
+    #   uses: EndBug/add-and-commit@v9
+    #   with:
+    #       author_name: Shriram Gokhale
+    #       author_email: shriramgokhale.m@planview.com
+    #       message: 'Add generated file'
+    #       add: "./result/Case_${{ github.run_number }}.html"
