@@ -2,7 +2,7 @@ name: Trigger lighthouse
 on:
   workflow_dispatch:
   release:
-  type: ['create']
+   type: ['create']
 
 jobs:
   generatePerfReport:
