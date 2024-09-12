@@ -78,5 +78,5 @@ jobs:
           message: 'Add generated file'
           add: "./result/${{ github.run_number }}/Case.html"
           
-    - name: Trigger comparison script
-      run: node hack.mjs ${{ github.run_number }}
+    # - name: Trigger comparison script
+    #   run: node hack.mjs ${{ github.run_number }}
