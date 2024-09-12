@@ -4,6 +4,10 @@
 import fs from 'fs';
 import path from 'path';
 
+const runNumber = process.argv[2];
+
+baselineRunNumber = runNumber-1; 
+
 
 const json1 = JSON.parse(fs.readFileSync('./result/case1.json', 'utf8'));
 const json2 = JSON.parse(fs.readFileSync('./result/case2.json', 'utf8'));
