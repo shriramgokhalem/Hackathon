@@ -34,5 +34,9 @@ jobs:
     - name: Install Light house puppeteer
       run: npm install -g puppeteer  # Install Lighthouse globally
 
+<<<<<<< HEAD
     - name: Trigger the script
       run: node hack.mjs
+=======
+    - run: node hack.mjs
+>>>>>>> 6b488b7145148b525578c603aa339994e2871645
