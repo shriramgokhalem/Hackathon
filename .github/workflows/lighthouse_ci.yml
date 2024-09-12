@@ -70,10 +70,10 @@ jobs:
           message: 'Create new folder and add file'
           add: './result/${{ github.run_number }}/'
     
-    # - name: Commit and push changes
-    #   uses: EndBug/add-and-commit@v9
-    #   with:
-    #       author_name: Shriram Gokhale
-    #       author_email: shriramgokhale.m@planview.com
-    #       message: 'Add generated file'
-    #       add: "./result/Case_${{ github.run_number }}.html"
+    - name: Commit and push changes
+      uses: EndBug/add-and-commit@v9
+      with:
+          author_name: Shriram Gokhale
+          author_email: shriramgokhale.m@planview.com
+          message: 'Add generated file'
+          add: "./result/Case_${{ github.run_number }}.html"
