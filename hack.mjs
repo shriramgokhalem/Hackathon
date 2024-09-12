@@ -52,6 +52,8 @@ const password = 'Password1!';
 
   // const runnerResult = await lighthouse(targetUrl, options);
 
+  mkdirSync(`./result/`+`${runNumber}/`);
+
   for (let page in urls) {
 
     const runnerResult = await lighthouse(urls[page], {
@@ -62,7 +64,7 @@ const password = 'Password1!';
     });
 
     let reportHtml = runnerResult.report;
-    mkdirSync(`./result/`+`${runNumber}/`);
+    
     writeFileSync(`./result/`+`${runNumber}/`+`${page}`+`.html`, reportHtml);
 
     console.log('Lighthouse performance score:', runnerResult.lhr.categories.performance.score * 100);
