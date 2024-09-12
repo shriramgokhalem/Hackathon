@@ -62,7 +62,7 @@ const password = 'Password1!';
     });
 
     let reportHtml = runnerResult.report;
-    writeFileSync(`./result/`+`${runNumber}`+`${page}`+`.html`, reportHtml);
+    writeFileSync(`./result/`+`${runNumber}/`+`${page}`+`.html`, reportHtml);
 
     console.log('Lighthouse performance score:', runnerResult.lhr.categories.performance.score * 100);
 
