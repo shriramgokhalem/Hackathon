@@ -46,6 +46,12 @@ jobs:
     #     name: lighthouse-report
     #     path: ./result/Case.html
 
+    - name: Configure Git
+      run: |
+          git config user.name "Shriram Gokhale"
+          git config user.email "shriramgokhale.m@planview.com"
+          git remote set-url origin https://shriramgokhale.m:${{ secrets.PAT_TOKEN }}@github.com/shriramgokhalem/Hackathon.git
+
     - name: Commit and push changes
       uses: EndBug/add-and-commit@v9
       with:
