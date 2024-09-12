@@ -85,3 +85,9 @@ jobs:
           
     # - name: Trigger comparison script
     #   run: node hack.mjs ${{ github.run_number }}
+
+    - name: Upload Lighthouse report
+      uses: actions/upload-artifact@v4  # Upload the report as an artifact
+      with:
+        name: lighthouse-report
+        path: ./result/${{ github.run_number }}/
