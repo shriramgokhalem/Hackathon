@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 import lighthouse from 'lighthouse';
-import { writeFileSync } from 'fs';
+import { writeFileSync , mkdirSync } from 'fs';
 import { launch } from 'chrome-launcher';
 
 // Replace with your login URL and credentials
@@ -62,6 +62,7 @@ const password = 'Password1!';
     });
 
     let reportHtml = runnerResult.report;
+    mkdirSync(`./result/`+`${runNumber}/`);
     writeFileSync(`./result/`+`${runNumber}/`+`${page}`+`.html`, reportHtml);
 
     console.log('Lighthouse performance score:', runnerResult.lhr.categories.performance.score * 100);
