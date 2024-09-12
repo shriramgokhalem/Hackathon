@@ -2,7 +2,7 @@ name: Trigger lighthouse
 on:
   workflow_dispatch:
   release:
-  type: ['create']
+   type: ['create']
 
 jobs:
   generatePerfReport:
@@ -34,4 +34,5 @@ jobs:
     - name: Install Light house puppeteer
       run: npm install -g puppeteer  # Install Lighthouse globally
 
-    - run: node hack.mjs
+    - name: Trigger the script
+      run: node hack.mjs
