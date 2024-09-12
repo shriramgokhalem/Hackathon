@@ -58,14 +58,14 @@ const password = 'Password1!';
 
     const runnerResult = await lighthouse(urls[page], {
       port: (new URL(browserWSEndpoint)).port,  // Use Puppeteer's port for Lighthouse
-      output: 'html',  // Output report in HTML format
+      output: 'json',  // Output report in HTML format
       logLevel: 'info',
       chromeFlags: ['--headless']
     });
 
     let reportHtml = runnerResult.report;
     
-    writeFileSync(`./result/`+`${runNumber}/`+`${page}`+`.html`, reportHtml);
+    writeFileSync(`./result/`+`${runNumber}/`+`${page}`+`.json`, reportHtml);
 
     console.log('Lighthouse performance score:', runnerResult.lhr.categories.performance.score * 100);
 
