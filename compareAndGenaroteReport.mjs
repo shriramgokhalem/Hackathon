@@ -6,13 +6,13 @@ import path from 'path';
 
 const urls={
   "Case" : "https://qaapp8.clarizen.com/develop_20240809_4055_Application/Case",
-  "Project": "https://qaapp8.clarizen.com/develop_20240809_4055_Application/Project",
-  "Task": "https://qaapp8.clarizen.com/develop_20240809_4055_Application/GenericTask"
+  // "Project": "https://qaapp8.clarizen.com/develop_20240809_4055_Application/Project",
+  // "Task": "https://qaapp8.clarizen.com/develop_20240809_4055_Application/GenericTask"
 };
 
 const runNumber = process.argv[2];
 
-baselineRunNumber = runNumber-1; 
+const baselineRunNumber = runNumber-1; 
 
 for (let page in urls) {
 
