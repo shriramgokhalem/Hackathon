@@ -1,0 +1,35 @@
+name: Trigger lighthouse
+on:
+  workflow_dispatch:
+
+jobs:
+  generatePerfReport:
+    runs-on: ubuntu-latest
+
+    # defaults:
+    #   run:
+    #     working-directory: e2e/perf
+
+    strategy:
+      matrix:
+        node-version: [20.17]
+
+    steps:
+    - name: Checkout repository
+    - uses: actions/checkout@v2
+
+    - name: Install node ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install lighthouse
+      run: npm install -g lighthouse  # Install Lighthouse globally
+
+    - name: Install puppeteer
+      run: npm install -g puppeteer  # Install Lighthouse globally
+
+    - name: Install Light house puppeteer
+      run: npm install -g puppeteer  # Install Lighthouse globally
+
+    - run: node hack.mjs

@@ -7,8 +7,8 @@ import { launch } from 'chrome-launcher';
 
 const urls={
   "Case" : "https://qaapp8.clarizen.com/develop_20240809_4055_Application/Case",
-  "Project": "https://qaapp8.clarizen.com/develop_20240809_4055_Application/Project",
-  "Task": "https://qaapp8.clarizen.com/develop_20240809_4055_Application/GenericTask"
+  // "Project": "https://qaapp8.clarizen.com/develop_20240809_4055_Application/Project",
+  // "Task": "https://qaapp8.clarizen.com/develop_20240809_4055_Application/GenericTask"
 };
 
 const loginUrl = 'https://qaapp8.clarizen.com/develop_20240809_4055_Application/Pages/Service/Login.aspx';
@@ -59,7 +59,7 @@ const password = 'Password1!';
     });
 
     let reportHtml = runnerResult.report;
-    writeFileSync(`${page}`+`.html`, reportHtml);
+    writeFileSync(`./result/`+`${page}`+`.html`, reportHtml);
 
     console.log('Lighthouse performance score:', runnerResult.lhr.categories.performance.score * 100);
 
