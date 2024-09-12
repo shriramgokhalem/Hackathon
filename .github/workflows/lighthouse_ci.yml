@@ -38,7 +38,7 @@ jobs:
       run: npm install -g puppeteer  # Install Lighthouse globally
 
     - name: Trigger the script
-      run: node hack.mjs
+      run: node hack.mjs ${{ github.run_number }}
 
     # - name: Upload Lighthouse report
     #   uses: actions/upload-artifact@v4  # Upload the report as an artifact
