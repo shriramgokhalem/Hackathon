@@ -59,6 +59,14 @@ jobs:
           cd result
           mkdir -p $folder_name
           echo "Folder created: $folder_name"
+
+    - name: Commit and push changes folder
+      uses: EndBug/add-and-commit@v9
+      with:
+          author_name: Shriram Gokhale
+          author_email: shriramgokhale.m@planview.com
+          message: 'Create new folder and add file'
+          add: '${{ github.run_number }}/'
     
     - name: Commit and push changes
       uses: EndBug/add-and-commit@v9
