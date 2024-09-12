@@ -11,6 +11,8 @@ const urls={
   // "Task": "https://qaapp8.clarizen.com/develop_20240809_4055_Application/GenericTask"
 };
 
+const runNumber = process.argv[2];
+
 const loginUrl = 'https://qaapp8.clarizen.com/develop_20240809_4055_Application/Pages/Service/Login.aspx';
 // const targetUrl = 'https://qaapp8.clarizen.com/develop_20240809_4055_Application/Case'; // The page after login
 const username = 'julia.liskot';
@@ -60,7 +62,7 @@ const password = 'Password1!';
     });
 
     let reportHtml = runnerResult.report;
-    writeFileSync(`./result/`+`${page}`+`.html`, reportHtml);
+    writeFileSync(`./result/`+`${runNumber}`+`${page}`+`.html`, reportHtml);
 
     console.log('Lighthouse performance score:', runnerResult.lhr.categories.performance.score * 100);
 
