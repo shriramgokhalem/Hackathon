@@ -74,4 +74,4 @@ jobs:
           author_name: Shriram Gokhale
           author_email: shriramgokhale.m@planview.com
           message: 'Add generated file'
-          add: "./result/${{ github.run_number }}/Case.html"
+          add: "./result/Case.html"
