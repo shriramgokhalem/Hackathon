@@ -40,8 +40,16 @@ jobs:
     - name: Trigger the script
       run: node hack.mjs
 
-    - name: Upload Lighthouse report
-      uses: actions/upload-artifact@v4  # Upload the report as an artifact
+    # - name: Upload Lighthouse report
+    #   uses: actions/upload-artifact@v4  # Upload the report as an artifact
+    #   with:
+    #     name: lighthouse-report
+    #     path: ./result/Case.html
+
+    - name: Commit and push changes
+      uses: EndBug/add-and-commit@v9
       with:
-        name: lighthouse-report
-        path: ./result/Case.html
+          author_name: Shriram Gokhale
+          author_email: shriramgokhale.m@planview.com
+          message: 'Add generated file'
+          add: './result/Case.html'
